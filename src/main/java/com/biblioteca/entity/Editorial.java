@@ -9,9 +9,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "tb_editorial")
+@Data
 public class Editorial {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,22 +24,10 @@ public class Editorial {
 	
 	
 	/*ONE TOMANY*/
-	//@OneToMany(mappedBy = "idlibroEditorial")
-	//private List<Libro> listalibroporeditorial;
+	@OneToMany(mappedBy = "idlibroEditorial")
+	private List<Libro> listalibroporeditorial;
 	
 	
 	
-	public Integer getIdEditorial() {
-		return idEditorial;
-	}
-	public void setIdEditorial(Integer idEditorial) {
-		this.idEditorial = idEditorial;
-	}
-	public String getNombreEditorial() {
-		return nombreEditorial;
-	}
-	public void setNombreEditorial(String nombreEditorial) {
-		this.nombreEditorial = nombreEditorial;
-	}
 
 }

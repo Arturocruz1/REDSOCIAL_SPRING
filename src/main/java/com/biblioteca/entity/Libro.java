@@ -10,6 +10,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -26,14 +28,14 @@ public class Libro {
 	private String nombreLibro;
 	@Column(name = "fec_publi_libro", nullable = false)
 	private LocalDate fechaPublicacion;
+
 	
 	
 	
-	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name="id_editorial")
 	private Editorial idlibroEditorial;
-	*/
+	
 	
 	//UNO A MUCHO LIBROS
 	@JsonIgnore
