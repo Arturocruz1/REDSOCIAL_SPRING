@@ -1,10 +1,13 @@
 package com.biblioteca.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +19,13 @@ public class Editorial {
 	private Integer idEditorial;
 	@Column(name="nom_editorial",nullable = false,length = 50)
 	private String nombreEditorial;
+	
+	
+	/*ONE TOMANY*/
+	//@OneToMany(mappedBy = "idlibroEditorial")
+	//private List<Libro> listalibroporeditorial;
+	
+	
 	
 	public Integer getIdEditorial() {
 		return idEditorial;

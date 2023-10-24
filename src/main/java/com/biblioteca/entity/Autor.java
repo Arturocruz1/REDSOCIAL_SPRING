@@ -5,10 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "tb_autor")
+@Data
 public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,23 +23,11 @@ public class Autor {
 	@Column(name="ape_autor",nullable = false,length = 200)
 	private String apellidoAutor;
 	
-	public Integer getIdAutor() {
-		return idAutor;
-	}
-	public void setIdAutor(Integer idAutor) {
-		this.idAutor = idAutor;
-	}
-	public String getNombreAutor() {
-		return nombreAutor;
-	}
-	public void setNombreAutor(String nombreAutor) {
-		this.nombreAutor = nombreAutor;
-	}
-	public String getApellidoAutor() {
-		return apellidoAutor;
-	}
-	public void setApellidoAutor(String apellidoAutor) {
-		this.apellidoAutor = apellidoAutor;
-	}
+	
+	@ManyToOne
+	@JoinColumn(name="cod_libro")
+	private Libro libro;
+	
+	
 	
 }
