@@ -36,6 +36,10 @@ public class Libro {
 	@JoinColumn(name="id_editorial")
 	private Editorial idlibroEditorial;
 	
+	@ManyToOne
+	@JoinColumn(name = "cod_genero")
+	private Genero genero;
+	
 	
 	//UNO A MUCHO LIBROS
 	@JsonIgnore
