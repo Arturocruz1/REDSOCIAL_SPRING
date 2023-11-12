@@ -6,14 +6,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "tb_genero")
+@Data
 public class Genero {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cod_genero")
 	private Integer codigo;
 	@Column(name = "nom_genero",nullable = false,length = 25)
@@ -23,7 +28,7 @@ public class Genero {
 	@OneToMany(mappedBy = "genero")
 	private List<Libro> listaLibros;
 
-	public Integer getCodigo() {
+	/*public Integer getCodigo() {
 		return codigo;
 	}
 
@@ -46,5 +51,5 @@ public class Genero {
 	public void setListaLibros(List<Libro> listaLibros) {
 		this.listaLibros = listaLibros;
 	}
-	
+	*/
 }
