@@ -26,7 +26,7 @@ public class Menu {
 	
 	@ManyToMany
 	@JoinTable(name = "tb_menu_rol",
-			joinColumns = @JoinColumn(name="cod_menu",referencedColumnName ="cod_menu"),
+			joinColumns = @JoinColumn(name="id_menu",referencedColumnName ="id_menu"),
 			inverseJoinColumns = @JoinColumn(name="cod_rol",referencedColumnName = "cod_rol"))
 	
 	private List<Rol> listaRoles;

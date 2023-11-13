@@ -1,12 +1,15 @@
 package com.biblioteca.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,6 +42,18 @@ public class Usuario {
 	@Column(name = "foto_usuario", nullable = false)
 	private String foto;
 	
+	/*RELACION DE USUARIO A ROL*/
+	@ManyToOne
+	@JoinColumn(name="id_rol")
+	private Rol rol;
+	
+	
+	public Rol getRol() {
+		return rol;
+	}
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
 	public Integer getCodigo() {
 		return codigo;
 	}
