@@ -8,9 +8,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "tb_usuario")
+@Data
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +29,7 @@ public class Usuario {
 	@Column(name = "sexo", nullable = false,length = 25)
 	private String sexo;
 	@Column(name = "fec_nac_persona", nullable = false)
-	private LocalDate fecha_nacimiento;
+	private LocalDate fechanacimiento;
 	@Column(name = "tel_usuario", nullable = false)
 	private int celular;
 	@Column(name = "correo_usuario", nullable = false,length = 30)
@@ -39,78 +41,7 @@ public class Usuario {
 	@Column(name = "foto_usuario", nullable = false)
 	private String foto;
 	
-	public Integer getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	public String getContrasena() {
-		return contrasena;
-	}
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-	}
-	public String getSexo() {
-		return sexo;
-	}
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-	public LocalDate getFecha_nacimiento() {
-		return fecha_nacimiento;
-	}
-	public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
-	}
-	public int getCelular() {
-		return celular;
-	}
-	public void setCelular(int celular) {
-		this.celular = celular;
-	}
-	public String getCorreoUsuario() {
-		return correoUsuario;
-	}
-	public void setCorreoUsuario(String correoUsuario) {
-		this.correoUsuario = correoUsuario;
-	}
-	public String getDniUsuario() {
-		return dniUsuario;
-	}
-	public void setDniUsuario(String dniUsuario) {
-		this.dniUsuario = dniUsuario;
-	}
-	public String getEstado() {
-		return estado;
-	}
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
+	
+		
 	
 }
