@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.biblioteca.entity.Usuario;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	
 	/*//Metodo para poder buscar un usuario mediante el nombre de nuestro usuario
 	Optional<Usuario> findByLogin(String username);

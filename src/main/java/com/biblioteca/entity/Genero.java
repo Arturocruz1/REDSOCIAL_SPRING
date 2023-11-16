@@ -22,7 +22,7 @@ public class Genero {
 	@Column(name = "cod_genero")
 	private Integer codigo;
 	@Column(name = "nom_genero",nullable = false,length = 25)
-	private String nombre;
+	private String nombreGenero;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "genero")
